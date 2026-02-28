@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cinzel", serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-got-gold: #c5a059;
+  --color-got-red: #8b0000;
+  --color-got-black: #0a0a0a;
+  --color-got-stone: #1c1c1c;
+}
+
+body {
+  background-color: var(--color-got-black);
+  color: #e5e5e5;
+  font-family: var(--font-serif);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+}
+
+.got-border {
+  border: 1px solid var(--color-got-gold);
+  position: relative;
+}
+
+.got-border::before, .got-border::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1px solid var(--color-got-gold);
+}
+
+.got-border::before { top: -5px; left: -5px; border-right: 0; border-bottom: 0; }
+.got-border::after { bottom: -5px; right: -5px; border-left: 0; border-top: 0; }
+
+.parchment-text {
+  color: #d4c4a8;
+}
+
+.gold-gradient {
+  background: linear-gradient(to right, #c5a059, #f1d592, #c5a059);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.torch-glow {
+  box-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+  animation: flicker 3s infinite;
+}
